@@ -1,14 +1,23 @@
 .content {
 	position: absolute;
-	left: 350px;
-	top: 150%;
+	top: 195%;
 	font-family: "Roboto";
+	width: 1000px;
+	right: 0;
+	height: 800px;
 }
-.content__pagination {
+.content__paginationBlock {
+	display: block;
 	position: relative;
-	left: 330px;
-	margin-bottom: 50px;
-	width: 200px;
+	margin-right: 0;
+	bottom: 130px;
+	height: 140px;
+	width: 700px;
+}
+.content__paginationItems {
+	position: relative;
+	top: 80%;
+	left: 69%;
 }
 .pageNum {
 	margin-right: 15px;
@@ -20,9 +29,11 @@
 	font-size: 18px;
 }
 .content__main {
-	margin-top: 70px;
     display: grid;
-    grid-template-columns: 400px 50px;
+    grid-template-columns: 400px 350px;
     grid-template-rows: 400px;
     padding-bottom: 50px;
+    position: absolute;
+    top: 40px;
+    left: 150px;
 }

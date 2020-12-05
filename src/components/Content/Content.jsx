@@ -13,6 +13,7 @@ const Content = () => {
 	let [ smartphones, setSmartphones ] = useState([]); 
 	let totalPages = Math.ceil(15/4);
 
+
 	useEffect( () => {
 		axios.get(`http://localhost:3001/smartphones?_page=${activePage}&_limit=4`)
 		.then( ({data}) => {
@@ -32,12 +33,15 @@ const Content = () => {
 	}
 
 	return <div className='content'>
-		<div className='content__pagination'>
-		 { pages.map( page => {
-		 	return <span key={page} className={classnames('pageNum', page===activePage ? 'activePage' : null)} 
-		 	onClick={() => handlePage(page)}>{page}</span>
-		 }) 
-		}
+		<div className='content__paginationBlock'>
+	
+		 <div className='content__paginationItems'> 
+		 	{ pages.map( page => {
+		 		return <span key={page} className={classnames('pageNum', page===activePage ? 'activePage' : null)} 
+		 		onClick={() => handlePage(page)}>{page}</span>
+		 	}) 
+			}	
+		 	</div>
 			
 		</div>
 			<div className='content__main'>
@@ -51,3 +55,8 @@ const Content = () => {
 
 
 export default Content;
+
+
+
+
+

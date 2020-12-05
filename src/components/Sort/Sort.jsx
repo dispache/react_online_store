@@ -19,7 +19,7 @@ const Sort = ( { activeItem, items } ) => {
 
 	const clickOutsideSort = (event) => {
 		if ( !event.path.includes(sortList.current) ) {
-			setVisibleSortPopup(false)
+			setVisibleSortPopup(false);
 		}
 	}
 	const setPopup = () => {
