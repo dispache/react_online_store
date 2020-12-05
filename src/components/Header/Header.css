@@ -1,0 +1,42 @@
+.header__wrapper {
+	background-color: #f2f2f2;
+}
+.header__logoImg {
+	width: 145px;
+	height: 105px;
+	margin-left: 35px;
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
+.header__basketButton {
+	position: fixed;
+	right: 110px;
+	top: 50px;
+	border: 1px solid grey;
+	border-radius: 35px;
+	width: 150px;
+	height: 35px;
+	font-family: "Merriweather";
+	text-transform: uppercase;
+	color: white;
+	background-color: #1a75ff;
+	font-size: 15px;
+	letter-spacing: 1px;
+	padding-bottom: 5px;
+}
+.header__basketButton:focus,active {
+	outline: none;
+
+}
+.header__basketButton:hover {
+	background-color: #b3d1ff;
+	transition: background-color 0.25s ease-in-out;
+	cursor: pointer;
+}
+.cartIcon {
+	width: 25px;
+	height: 20px;
+	position: relative;
+	top: 3.5px;
+	margin-left: 5px;
+}

@@ -1,0 +1,15 @@
+.sidebar {
+	width: 200px;
+	border-right: 1px solid #1a75ff;
+	position: fixed;
+	height: 960px;
+	font-family: "Merriweather";
+}
+.sidebar__content {
+	margin-left: 35px;
+	position: absolute;
+	top: 50px;
+}
+p {
+	margin: 0 0;
+}

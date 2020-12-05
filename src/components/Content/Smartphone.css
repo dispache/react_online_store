@@ -1,0 +1,41 @@
+.smartphone {
+	width: 350px;
+	height: 350px;
+	border: 1px solid #1a75ff;
+	border-radius: 55px;
+	box-shadow: 0 0 5px #1a75ff;
+	cursor: default;
+	background-color: white;
+}
+.smartphone__img {
+	width: 220px;
+	height: 200px;
+	margin-left: 60px;
+	margin-top: 15px;
+}
+.smartphone__brand, .smartphone__model, .smartphone__price {
+	text-align: center;
+}
+.smartphone__brand {
+	font-weight: bold;
+	padding-bottom: 5px;
+	margin-top: 5px;
+}
+.smartphone__model {
+
+}
+.smartphone__price {
+	border: 1px solid grey;
+	border-radius: 15px;
+	width: 190px;
+	height: 30px;
+	margin-left: 79px;
+	padding-top: 8px;
+	text-align: center;
+	color: white;
+	background-color: #1a75ff;
+	cursor: pointer;
+}
+
+
+

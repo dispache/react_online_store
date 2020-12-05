@@ -1,0 +1,28 @@
+.content {
+	position: absolute;
+	left: 350px;
+	top: 150%;
+	font-family: "Roboto";
+}
+.content__pagination {
+	position: relative;
+	left: 330px;
+	margin-bottom: 50px;
+	width: 200px;
+}
+.pageNum {
+	margin-right: 15px;
+	cursor: pointer;
+}
+.activePage {
+	text-decoration: underline;
+	font-weight: bolder;
+	font-size: 18px;
+}
+.content__main {
+	margin-top: 70px;
+    display: grid;
+    grid-template-columns: 400px 50px;
+    grid-template-rows: 400px;
+    padding-bottom: 50px;
+}

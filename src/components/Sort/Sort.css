@@ -1,0 +1,39 @@
+.sort {
+	position: absolute;
+	right: 40px;
+	margin-top: 10px;
+	cursor: default;
+	font-size: 14px
+}
+.activeSort {
+	margin-left: 30px;
+	font-size: 13px;
+	font-weight: bold;
+	text-decoration: underline;
+	cursor: pointer;
+}
+.doubleUpIcon {
+	position: relative;
+	right: 5px;
+	top: 5px;
+	width: 20px;
+	height: 20px;
+}
+.doubleUpIconRotated {
+	transform: rotate(180deg);
+}
+.sortList {
+	position: absolute;
+	right: 0px;
+	top: 50px;
+	border: 1px solid #1a75ff;
+	padding: 10px 10px;
+	box-shadow: 0px 0px 15px grey;
+	
+}
+.sortItem {
+	padding: 5px 5px;
+}
+.sortList:hover {
+	cursor: pointer;
+}
