@@ -18,6 +18,7 @@ const Sort = ( { activeItem, items } ) => {
 	},[]);
 
 	const clickOutsideSort = (event) => {
+		console.log(event.path);
 		if ( !event.path.includes(sortList.current) ) {
 			setVisibleSortPopup(false);
 		}
@@ -32,11 +33,9 @@ const Sort = ( { activeItem, items } ) => {
 	
 	return (<div className="sort" ref={sortList}>
 				
-				<div><span>Сортировать по :</span>
-				<span className='activeSort' onClick={setPopup}>
+				<div className='activeSort' onClick={setPopup}>
 				<img className={classnames('doubleUpIcon', visibleSortPopup ? 'doubleUpIconRotated' : null)} 
-				src={doubleUp} alt='double down'></img>{activeSortItem}</span>
-				</div>
+				src={doubleUp} alt='double down'></img>{activeSortItem}</div>
 				{ visibleSortPopup && <div className='sortList'>
 				{items.map( (item,index) => {
 					return <div key={index} className='sortItem' onClick={ () => setActiveItem(item)}>{item}</div>

@@ -33,6 +33,9 @@ const Content = () => {
 	}
 
 	return <div className='content'>
+		
+		<div className='sortBy'>Сортировать по :</div>
+
 		<div className='content__paginationBlock'>
 	
 		 <div className='content__paginationItems'> 

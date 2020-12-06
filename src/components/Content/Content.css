@@ -12,12 +12,20 @@
 	margin-right: 0;
 	bottom: 130px;
 	height: 140px;
-	width: 700px;
+	width: 740px;
 }
 .content__paginationItems {
-	position: relative;
-	top: 80%;
+	width: 100px;
+	position: absolute;
+	top: 60%;
 	left: 69%;
+}
+.sortBy {
+	width: 125px;
+	height: 130px;
+	position: absolute;
+	right: 14%;
+	top : -15%;
 }
 .pageNum {
 	margin-right: 15px;
