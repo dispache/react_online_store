@@ -32,6 +32,7 @@
 	border: 1px solid #1a75ff;
 	padding: 10px 10px;
 	box-shadow: 0px 0px 15px grey;
+	min-width: 120px;
 	
 }
 .sortItem {

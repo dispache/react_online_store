@@ -5,37 +5,43 @@
 	width: 145px;
 	height: 105px;
 	margin-left: 35px;
-	margin-top: 15px;
-	margin-bottom: 15px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	display: inline;
 }
-.header__basketButton {
-	position: fixed;
-	right: 110px;
-	top: 50px;
+.header__items {
+	list-style: none;
+	position: absolute;
+	top: 30px;
+	right: 0;
+}
+.header__itemsLi {
+	display: inline;
+	padding-right: 5px;
+}
+.header__itemsLi > .header__itemsLi__buttons {
 	border: 1px solid grey;
 	border-radius: 35px;
-	width: 150px;
-	height: 35px;
-	font-family: "Merriweather";
+	width: 120px;
+	min-height: 35px;
+	font-family: "Roboto";
 	text-transform: uppercase;
 	color: white;
 	background-color: #1a75ff;
-	font-size: 15px;
-	letter-spacing: 1px;
 	padding-bottom: 5px;
 }
-.header__basketButton:focus,active {
+.header__itemsLi__buttons:focus,active {
 	outline: none;
 
 }
-.header__basketButton:hover {
+.header__itemsLi__buttons:hover {
 	background-color: #b3d1ff;
 	transition: background-color 0.25s ease-in-out;
 	cursor: pointer;
 }
-.cartIcon {
-	width: 25px;
-	height: 20px;
+.header__itemsLi__buttons__icons {
+	width: 22px;
+	height: 17px;
 	position: relative;
 	top: 3.5px;
 	margin-left: 5px;

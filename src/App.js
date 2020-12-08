@@ -4,14 +4,14 @@ import { Header, Sort, Sidebar, Content } from './components';
 
 import './App.css';
 
+
 function App() {
-  
   
   return (
     <div className="App">
        
         <Header />
-        <Sort items={['популярности','цене','алфавиту']} activeItem={'популярности'}/>
+        <Sort activeItem={'популярности'}/>
         <Sidebar />
         <Content />
 
@@ -21,5 +21,6 @@ function App() {
     </div>
   );
 }
+
 
 export default App;

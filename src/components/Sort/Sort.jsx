@@ -1,24 +1,30 @@
 import React, { useState, useRef, useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 import classnames from 'classnames';
 
 import './Sort.css';
 
 import doubleUp from '../../assets/images/double-up.png';
 
+import { setSortByActionCreator as setSortBy } from '../../redux/actions/smartphones';
 
-const Sort = ( { activeItem, items } ) => {
+
+let sortItems = [ 'популярности','цене','алфавиту'];
+
+const Sort = ( { activeItem } ) => {
 	
 	let sortList = useRef();
+	
 	let [ visibleSortPopup, setVisibleSortPopup ] = useState(false);
 	let [ activeSortItem, setActiveSortItem ] = useState(activeItem);
-
+	
+	let dispatch = useDispatch();
 
 	useEffect( () => {
 		document.body.addEventListener('click', clickOutsideSort)
 	},[]);
 
 	const clickOutsideSort = (event) => {
-		console.log(event.path);
 		if ( !event.path.includes(sortList.current) ) {
 			setVisibleSortPopup(false);
 		}
@@ -28,16 +34,17 @@ const Sort = ( { activeItem, items } ) => {
 	}
 	const setActiveItem = (item) => {
 		setActiveSortItem(item);
+		dispatch(setSortBy(item))
 		setVisibleSortPopup(false);
 	}
-	
+
 	return (<div className="sort" ref={sortList}>
 				
 				<div className='activeSort' onClick={setPopup}>
 				<img className={classnames('doubleUpIcon', visibleSortPopup ? 'doubleUpIconRotated' : null)} 
 				src={doubleUp} alt='double down'></img>{activeSortItem}</div>
 				{ visibleSortPopup && <div className='sortList'>
-				{items.map( (item,index) => {
+				{ sortItems.map( (item,index) => {
 					return <div key={index} className='sortItem' onClick={ () => setActiveItem(item)}>{item}</div>
 				} ) }
 					</div> }

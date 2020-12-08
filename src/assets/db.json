@@ -4,90 +4,105 @@
 		"brand" : "Samsung",
 		"model" : "Galaxy A71",
 		"price" : 9999,
+		"popular" : 5,
 		"image" : "https://cdn.comfy.ua/media/catalog/product/cache/4/image/1440x1080/62defc7f46f3fbfc8afcd112227d1181/s/m/sm_a715_galaxya71_2ndwave_silver_rside_01.jpg"
 		},
 		{
 		"brand" : "Samsung",
 		"model" : "Galaxy A31",
 		"price" : 5999,
+		"popular" : 2,
 		"image" : "https://cdn.comfy.ua/media/catalog/product/cache/4/image/1440x1080/62defc7f46f3fbfc8afcd112227d1181/s/a/samsung_galaxy_a31_prism_crush_red_07.jpg"		
 		},
 		{
 		"brand" : "Samsung",
 		"model" : "Galaxy S20FE",
 		"price" : 19999,
+		"popular" : 17,
 		"image" : "https://cdn.comfy.ua/media/catalog/product/cache/4/image/1440x1080/62defc7f46f3fbfc8afcd112227d1181/s/m/sm-g780_g781_s20fe_rside_zb_01.jpg"
 		},
 		{
 		"brand" : "Samsung",
 		"model" : "S20 Ultra",
 		"price" : 33999,
+		"popular" : 13,
 		"image" : "https://cdn.comfy.ua/media/catalog/product/cache/4/image/1440x1080/62defc7f46f3fbfc8afcd112227d1181/s/a/samsung_galaxy_s20_ultra_12-512gb_black_5.jpg"
 		},
 		{
 		"brand" : "Samsung",
 		"model" : "Galaxy A10s",
 		"price" : 3399,
+		"popular" : 9,
 		"image" : "https://cdn.comfy.ua/media/catalog/product/cache/4/image/1440x1080/62defc7f46f3fbfc8afcd112227d1181/s/a/samsung_galaxy_a10s_.jpg"
 		},
 		{
 		"brand" : "Apple",
 		"model" : "iPhone 7",
 		"price" : 11999,
+		"popular" : 7,
 		"image" : "https://cdn.comfy.ua/media/catalog/product/cache/4/image/1440x1080/62defc7f46f3fbfc8afcd112227d1181/a/p/apple_iphone_7_32gb_black.jpg"		
 		},	
 		{
 		"brand" : "Apple",
 		"model" : "iPhone XR",
 		"price" : 18999,
+		"popular" : 12,
 		"image" : "https://cdn.comfy.ua/media/catalog/product/cache/4/image/1440x1080/62defc7f46f3fbfc8afcd112227d1181/a/p/apple_iphone_xr_red_08_1.jpg"
 		},
 		{
 		"brand" : "Apple",
 		"model" : "iPhone SE 2020 ",
 		"price" : 14999,
+		"popular" : 20,
 		"image" : "https://cdn.comfy.ua/media/catalog/product/cache/4/image/1440x1080/62defc7f46f3fbfc8afcd112227d1181/r/u/ruun_iphone-se_white_q220_pdp-image-1_3.jpg"
 		},
 		{
 		"brand" : "Apple",
 		"model" : "iPhone 12",
 		"price" : 31999,
+		"popular" : 11,
 		"image" : "https://cdn.comfy.ua/media/catalog/product/cache/4/image/1440x1080/62defc7f46f3fbfc8afcd112227d1181/w/w/wwru_iphone12_q121_black_pdp-image-1b.jpg"
 		},
 		{
 		"brand" : "Apple",
 		"model" : "iPhone 11",
 		"price" : 22999,
+		"popular" : 13,
 		"image" : "https://cdn.comfy.ua/media/catalog/product/cache/4/image/1440x1080/62defc7f46f3fbfc8afcd112227d1181/a/p/apple_iphone_11_64gb_black_0_3.jpg"
 		},
 		{
 		"brand" : "Xiaomi",
 		"model" : "Mi 10T",
 		"price" : 13999,
+		"popular" : 16,
 		"image" : "https://cdn.comfy.ua/media/catalog/product/cache/4/image/1440x1080/62defc7f46f3fbfc8afcd112227d1181/_/m/_mi_10t_6128gb_cosmic_black_8_.jpg"
 		},
 		{
 		"brand" : "Xiaomi",
 		"model" : "Redmi 9C",
 		"price" : 3299,
+		"popular" : 1,
 		"image" : "https://cdn.comfy.ua/media/catalog/product/cache/4/image/1440x1080/62defc7f46f3fbfc8afcd112227d1181/c/3/c3mn-black-_1__1.jpg"
 		},
 		{
 		"brand" : "Xiaomi",
 		"model" : "Redmi Note 9 Pro",
 		"price" : 6699,
+		"popular" : 8,
 		"image" : "https://cdn.comfy.ua/media/catalog/product/cache/4/image/1440x1080/62defc7f46f3fbfc8afcd112227d1181/x/i/xiaomi_redmi_note_9_pro_664gb_interstellar_grey_01_2.jpg"
 		},
 		{
 		"brand" : "Xiaomi",
 		"model" : "Mi A3",
 		"price" : 3999,
+		"popular" : 3,
 		"image" : "https://cdn.comfy.ua/media/catalog/product/cache/4/image/1440x1080/62defc7f46f3fbfc8afcd112227d1181/x/i/xiaomi_mi_a3_464gb_not_just_blue_03_1.jpg"
 		},
 		{
 		"brand" : "Xiaomi",
 		"model" : "Redmi Note 8 Pro",
 		"price" : 5999,
+		"popular" : 6,
 		"image" : "https://cdn.comfy.ua/media/catalog/product/cache/4/image/1440x1080/62defc7f46f3fbfc8afcd112227d1181/x/i/xiaomi_redmi_note_8_pro_664gb_blue_011.png"
 		}
 	]

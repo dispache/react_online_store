@@ -1,29 +1,33 @@
 import React, { useState, useEffect } from 'react';
 import classnames from 'classnames';
-import * as axios from 'axios';
+import { useDispatch, useSelector } from 'react-redux';
 
 import Smartphone from './Smartphone.jsx';
 
 import './Content.css';
 
+import { fetchSmartphones } from '../../redux/actions/smartphones';
 
 const Content = () => {
 	
 	let [ activePage, setActivePage ] = useState(1);
-	let [ smartphones, setSmartphones ] = useState([]); 
 	let totalPages = Math.ceil(15/4);
 
+	let dispatch = useDispatch();
 
-	useEffect( () => {
-		axios.get(`http://localhost:3001/smartphones?_page=${activePage}&_limit=4`)
-		.then( ({data}) => {
-			setSmartphones(data);
-		});
-		
-	}, [activePage])
+	let { smartphones, sortBy } = useSelector( ({smartphonesPage}) => {
+		return {
+			smartphones : smartphonesPage.smartphones,
+			sortBy : smartphonesPage.sortBy,
+		}
+	})
 
+	useEffect(() => {
+		dispatch(fetchSmartphones(sortBy,activePage));
+	}, [activePage,sortBy,dispatch]);
 
 	let pages = [];
+	
 	for ( let i = 1 ; i <= totalPages ; i++ ) {
 		pages.push(i);
 	}
@@ -47,8 +51,9 @@ const Content = () => {
 		 	</div>
 			
 		</div>
+	
 			<div className='content__main'>
-				{ smartphones.map( item => {
+				{ smartphones && smartphones.map( item => {
 					return <Smartphone {...item} key={item.model} />
 				})}					
 			</div>
