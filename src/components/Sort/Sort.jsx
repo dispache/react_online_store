@@ -9,7 +9,11 @@ import doubleUp from '../../assets/images/double-up.png';
 import { setSortByActionCreator as setSortBy } from '../../redux/actions/smartphones';
 
 
-let sortItems = [ 'популярности','цене','алфавиту'];
+let sortItems = [
+	{ name : "популярности", type : 'popular', order : 'desc' },
+	{ name : "цене", type : 'price', order : 'desc' },
+	{ name : "алфавиту", type : 'brand', order : 'asc' }
+]
 
 const Sort = ( { activeItem } ) => {
 	
@@ -33,7 +37,8 @@ const Sort = ( { activeItem } ) => {
 		setVisibleSortPopup(!visibleSortPopup);
 	}
 	const setActiveItem = (item) => {
-		setActiveSortItem(item);
+		setActiveSortItem(item.name);
+		// console.log(item)
 		dispatch(setSortBy(item))
 		setVisibleSortPopup(false);
 	}
@@ -45,7 +50,7 @@ const Sort = ( { activeItem } ) => {
 				src={doubleUp} alt='double down'></img>{activeSortItem}</div>
 				{ visibleSortPopup && <div className='sortList'>
 				{ sortItems.map( (item,index) => {
-					return <div key={index} className='sortItem' onClick={ () => setActiveItem(item)}>{item}</div>
+					return <div key={index} className='sortItem' onClick={ () => setActiveItem(item)}>{item.name}</div>
 				} ) }
 					</div> }
 

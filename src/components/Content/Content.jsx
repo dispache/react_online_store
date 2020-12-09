@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import classnames from 'classnames';
 import { useDispatch, useSelector } from 'react-redux';
 
@@ -6,25 +6,28 @@ import Smartphone from './Smartphone.jsx';
 
 import './Content.css';
 
-import { fetchSmartphones } from '../../redux/actions/smartphones';
+import preloader from '../../assets/images/preloader.gif';
+
+import { fetchSmartphones, setActivePageActionCreator as setActivePage } from '../../redux/actions/smartphones';
 
 const Content = () => {
-	
-	let [ activePage, setActivePage ] = useState(1);
-	let totalPages = Math.ceil(15/4);
 
 	let dispatch = useDispatch();
 
-	let { smartphones, sortBy } = useSelector( ({smartphonesPage}) => {
+	let { smartphones, sortBy, isLoaded, selectedCategories, activePage, totalPages } = useSelector( ({smartphonesPage}) => {
 		return {
 			smartphones : smartphonesPage.smartphones,
+			activePage : smartphonesPage.activePage,
 			sortBy : smartphonesPage.sortBy,
+			isLoaded : smartphonesPage.isLoaded,
+			selectedCategories : smartphonesPage.selectedCategories,
+			totalPages : smartphonesPage.totalPages
 		}
 	})
 
 	useEffect(() => {
-		dispatch(fetchSmartphones(sortBy,activePage));
-	}, [activePage,sortBy,dispatch]);
+		dispatch(fetchSmartphones(sortBy,activePage, selectedCategories));
+	}, [activePage,sortBy, selectedCategories,dispatch]);
 
 	let pages = [];
 	
@@ -33,7 +36,7 @@ const Content = () => {
 	}
 
 	const handlePage = (page) => {
-		setActivePage(page);
+		dispatch(setActivePage(page));	
 	}
 
 	return <div className='content'>
@@ -41,7 +44,7 @@ const Content = () => {
 		<div className='sortBy'>Сортировать по :</div>
 
 		<div className='content__paginationBlock'>
-	
+			<div className='test'>
 		 <div className='content__paginationItems'> 
 		 	{ pages.map( page => {
 		 		return <span key={page} className={classnames('pageNum', page===activePage ? 'activePage' : null)} 
@@ -49,13 +52,20 @@ const Content = () => {
 		 	}) 
 			}	
 		 	</div>
-			
+		</div>
 		</div>
 	
 			<div className='content__main'>
-				{ smartphones && smartphones.map( item => {
+				
+				{ isLoaded ? smartphones.map( item => {
 					return <Smartphone {...item} key={item.model} />
-				})}					
+				}) 
+				: Array(4).fill(0).map((el, index) => <div className='loadingBlock' key={index}>
+					<div className='loadingBlock'>
+					<img className='preloaderGif' src={preloader} alt='Загрузка'></img>
+						</div>
+					</div>)
+				}					
 			</div>
 
 	</div>

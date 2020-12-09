@@ -17,10 +17,16 @@
 	font-size: 20px;
 }
 .content__paginationItems {
-	width: 100px;
+	min-width: 150px;
 	position: absolute;
 	top: 60%;
-	left: 66%;
+	left: 61%;
+	padding-left: 0;
+  	margin: 5px 0;
+  	border-radius: 4px;
+  	display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .sortBy {
 	width: 125px;
@@ -31,13 +37,25 @@
 	cursor: default;
 }
 .pageNum {
-	margin-right: 15px;
 	cursor: pointer;
+	position: relative;
+  	float: left;
+  	padding: 6px 12px;
+  	margin-left: -1px;
+  	line-height: 1.42857143;
+  	color: #428bca;
+  	text-decoration: none;
+  	background-color: #fff;
+  	border: 1px solid #ddd;
+  	border-radius: 5px;
 }
 .activePage {
-	text-decoration: underline;
 	font-weight: bolder;
-	font-size: 23px;
+	color: white;
+  	background-color: #fff;
+  	border-color: #ddd;
+  	background-color: #428bca;
+  	border-color: #428bca;
 }
 .content__main {
     display: grid;
@@ -47,4 +65,13 @@
     position: absolute;
     top: 30px;
     left: 150px;
+}
+.preloaderGif {
+	width: 350px;
+	height: 350px;
+	border: 1px solid #1a75ff;
+	border-radius: 55px;
+	box-shadow: 0 0 5px #1a75ff;
+	cursor: default;
+	background-color: white;
 }
