@@ -1,6 +1,8 @@
 import React from 'react';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 
-import { Header, Sort, Sidebar, Content } from './components';
+import { Header } from './components';
+import { Home, Cart } from './pages';
 
 import './App.css';
 
@@ -8,17 +10,17 @@ import './App.css';
 function App() {
   
   return (
-    <div className="App">
+    <Router>
+    
+    	<div className="App">
        
-        <Header />
-        <Sort activeItem={'популярности'}/>
-        <Sidebar />
-        <Content />
+        	<Header />
+        	<Route exact path='/' component={Home} />
+        	<Route exact path='/cart' component={Cart} />
+        	
+   		</div>
 
-
-
-
-    </div>
+   	</Router>
   );
 }
 

@@ -9,6 +9,10 @@
 	margin-bottom: 5px;
 	display: inline;
 }
+.header__logoImg:hover {
+	cursor: pointer;
+}
+
 .header__items {
 	list-style: none;
 	position: absolute;
@@ -29,6 +33,11 @@
 	color: white;
 	background-color: #1a75ff;
 	padding-bottom: 5px;
+	text-decoration: none;
+}
+a.navLinkCart {
+	text-decoration: none;
+	color: inherit;
 }
 .header__itemsLi__buttons:focus,active {
 	outline: none;
