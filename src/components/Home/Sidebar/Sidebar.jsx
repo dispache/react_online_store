@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 
 import SidebarItems from './SidebarItems.jsx';
 
-import { fetchSidebarBrands } from '../../redux/actions/smartphones';
+import { fetchSidebarBrands } from '../../../redux/actions/smartphones';
 
 import './Sidebar.css';
 

@@ -1,6 +1,6 @@
 .content {
 	position: absolute;
-	top: 215%;
+	top: 24.3%;
 	font-family: "Roboto";
 	width: 1000px;
 	right: 0;
@@ -61,7 +61,6 @@
     display: grid;
     grid-template-columns: 400px 350px;
     grid-template-rows: 400px;
-    padding-bottom: 50px;
     position: absolute;
     top: 30px;
     left: 150px;

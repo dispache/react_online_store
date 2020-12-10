@@ -6,9 +6,9 @@ import Smartphone from './Smartphone.jsx';
 
 import './Content.css';
 
-import preloader from '../../assets/images/preloader.gif';
+import preloader from '../../../assets/images/preloader.gif';
 
-import { fetchSmartphones, setActivePageActionCreator as setActivePage } from '../../redux/actions/smartphones';
+import { fetchSmartphones, setActivePageActionCreator as setActivePage } from '../../../redux/actions/smartphones';
 
 const Content = () => {
 

@@ -4,9 +4,9 @@ import classnames from 'classnames';
 
 import './Sort.css';
 
-import doubleUp from '../../assets/images/double-up.png';
+import doubleUp from '../../../assets/images/double-up.png';
 
-import { setSortByActionCreator as setSortBy } from '../../redux/actions/smartphones';
+import { setSortByActionCreator as setSortBy } from '../../../redux/actions/smartphones';
 
 
 let sortItems = [
@@ -25,7 +25,10 @@ const Sort = ( { activeItem } ) => {
 	let dispatch = useDispatch();
 
 	useEffect( () => {
-		document.body.addEventListener('click', clickOutsideSort)
+		document.body.addEventListener('click', clickOutsideSort);
+		return function() {
+			document.body.removeEventListener('click', clickOutsideSort);
+		}
 	},[]);
 
 	const clickOutsideSort = (event) => {

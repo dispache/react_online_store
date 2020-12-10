@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { Checkbox,FormControlLabel } from '@material-ui/core';
 
 import { fetchSmartphones, 
-setSelectedCategoriesActionCreator as setSelectedCategories } from '../../redux/actions/smartphones';
+setSelectedCategoriesActionCreator as setSelectedCategories } from '../../../redux/actions/smartphones';
 
 
 const SidebarItems = ( { title, id }) => {
