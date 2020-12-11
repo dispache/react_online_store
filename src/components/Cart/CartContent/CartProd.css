@@ -1,0 +1,46 @@
+.cartprod {
+	width: 100%;
+	border: 1px solid grey;
+	position: relative;
+	top: 15%;
+	padding: 15px 0;
+	box-shadow: 0 0 10px grey;
+	margin-bottom: 10px;
+}
+.prodImg {
+	width: 120px;
+	height: 100px;	
+}
+.prodInfo {
+	position: absolute;
+	left: 120px;
+	bottom: 25%;
+}
+.prodPrice {
+	position: absolute;
+	right: 15%;
+	bottom: 40%;
+	font-weight: bold;
+	font-size: 18px;
+	font-family: "Roboto";
+	text-decoration: underline;
+}
+.removeProdIcon {
+	width: 30px;
+	height: 20px;
+	position: absolute;
+	right: 0;
+	opacity: 0.3;
+	cursor: pointer;
+}
+.removeProdIcon:hover {
+	opacity: 1;
+}
+.prodBrand {
+	font-weight: bold;
+	font-size: 20px;
+	margin-bottom: 5px;
+}
+.prodModel {
+	color: grey;
+}

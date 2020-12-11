@@ -3,7 +3,7 @@ import React, { useRef, useState } from 'react';
 import './Smartphone.css';
 
 
-const Smartphone = ({ brand,model,price,image}) => {
+const Smartphone = ({ brand,model,price,image, addProd }) => {
 	
 	let priceBlock = useRef();
 
@@ -18,6 +18,8 @@ const Smartphone = ({ brand,model,price,image}) => {
 	const mouseOutPrice = (event) => {
 		setPriceBuy(price + ' грн')
 	}
+
+	let obj = { brand, model, price, image };
 	
 
 	return (
@@ -26,7 +28,7 @@ const Smartphone = ({ brand,model,price,image}) => {
 			<div className='smartphone__brand'>{brand}</div>		
 			<div className='smartphone__model'>{model}</div>
 			<div className='smartphone__price' ref={priceBlock} 
-			onClick={() => alert('Товар добавлен в корзину')}>{priceBuy}</div>
+			onClick={() => addProd(obj)}>{priceBuy}</div>
 			</div>
 	)
 }

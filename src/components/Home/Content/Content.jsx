@@ -9,19 +9,22 @@ import './Content.css';
 import preloader from '../../../assets/images/preloader.gif';
 
 import { fetchSmartphones, setActivePageActionCreator as setActivePage } from '../../../redux/actions/smartphones';
+import { addProdToCartActionCreator } from '../../../redux/actions/cart';
 
 const Content = () => {
 
 	let dispatch = useDispatch();
 
-	let { smartphones, sortBy, isLoaded, selectedCategories, activePage, totalPages } = useSelector( ({smartphonesPage}) => {
+	let { smartphones, sortBy, isLoaded, selectedCategories, activePage, totalPages, cartItems } = useSelector( 
+		({smartphonesPage, cartPage}) => {
 		return {
 			smartphones : smartphonesPage.smartphones,
 			activePage : smartphonesPage.activePage,
 			sortBy : smartphonesPage.sortBy,
 			isLoaded : smartphonesPage.isLoaded,
 			selectedCategories : smartphonesPage.selectedCategories,
-			totalPages : smartphonesPage.totalPages
+			totalPages : smartphonesPage.totalPages,
+			cartItems : cartPage.cartItems
 		}
 	})
 
@@ -37,6 +40,13 @@ const Content = () => {
 
 	const handlePage = (page) => {
 		dispatch(setActivePage(page));	
+	}
+
+	const addProdToCart = (obj) => {
+		alert('Товар был добавлен в корзину');
+		let prodIndex = cartItems.length + 1;
+		obj = {...obj, prodIndex}
+		dispatch(addProdToCartActionCreator(obj))
 	}
 
 	return <div className='content'>
@@ -58,7 +68,7 @@ const Content = () => {
 			<div className='content__main'>
 				
 				{ isLoaded ? smartphones.map( item => {
-					return <Smartphone {...item} key={item.model} />
+					return <Smartphone {...item} key={item.model} addProd={addProdToCart}/>
 				}) 
 				: Array(4).fill(0).map((el, index) => <div className='loadingBlock' key={index}>
 					<div className='loadingBlock'>
