@@ -3,7 +3,7 @@ import React, { useRef, useState } from 'react';
 import './Smartphone.css';
 
 
-const Smartphone = ({ brand,model,price,image, addProd }) => {
+const Smartphone = React.memo(({ brand,model,price,image, addProd }) => {
 	
 	let priceBlock = useRef();
 
@@ -31,7 +31,7 @@ const Smartphone = ({ brand,model,price,image, addProd }) => {
 			onClick={() => addProd(obj)}>{priceBuy}</div>
 			</div>
 	)
-}
+})
 
 
 

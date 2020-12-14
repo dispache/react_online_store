@@ -2,20 +2,30 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
 import { Checkbox,FormControlLabel } from '@material-ui/core';
+import { makeStyles } from '@material-ui/core/styles';
 
-import { fetchSmartphones, 
-setSelectedCategoriesActionCreator as setSelectedCategories } from '../../../redux/actions/smartphones';
+import './SidebarItems.css';
 
+import { setSelectedCategoriesActionCreator as setSelectedCategories,
+setCheckedSidebarItems } from '../../../redux/actions/smartphones';
 
-const SidebarItems = ( { title, id }) => {
+const useStyles = makeStyles((theme) => ({
+	checkbox: {
+		width : '100%',
+		fontWeight: 1000,
+		paddingBottom: 0,
+		marginLeft: 50,
+	}
+}));
+ 
+
+const SidebarItems = React.memo( ({ title, id, isChecked }) => {
 	
 	let elemRef = React.useRef();
 
-	let { selectedCategories, sortBy, activePage } = useSelector(( {smartphonesPage} ) => {
+	let { selectedCategories } = useSelector(( {smartphonesPage} ) => {
 		return {
-			selectedCategories : smartphonesPage.selectedCategories,
-			sortBy : smartphonesPage.sortBy,
-			activePage : smartphonesPage.activePage
+			selectedCategories : smartphonesPage.selectedCategories
 		}
 	})
 
@@ -23,27 +33,32 @@ const SidebarItems = ( { title, id }) => {
 
 	const clickOnCategory = (event) => {
 		if ( elemRef.current.control.checked ) {
-			selectedCategories.push({ title, id})
-			dispatch(fetchSmartphones(sortBy,activePage,selectedCategories))
+			let newSelectedCategories = [...selectedCategories, { title, id } ];
+			dispatch(setCheckedSidebarItems( { title, id, isChecked : true } ))
+			dispatch(setSelectedCategories(newSelectedCategories))
 		} else {
+			dispatch(setCheckedSidebarItems( { title, id, isChecked : false }))
 			let array = selectedCategories.filter( el => el.title !== title )
 			dispatch(setSelectedCategories(array))
-			dispatch(fetchSmartphones(sortBy,activePage,selectedCategories))
 		}
 	}
 
-	return <p className='sidebar__contentElement'><FormControlLabel
+	const classes = useStyles();
+
+	return <FormControlLabel
 				control= { <Checkbox
 					            id={String(id)}
 					            name={`checked${title}`}
 					            color="primary"
 					            onClick={clickOnCategory}
+					            checked={isChecked}
           				/> }
           		label={title}
           		ref={elemRef}
+          		className={classes.checkbox}
           		
-          /></p>
-}
+          />
+})
 
 
 export default SidebarItems;

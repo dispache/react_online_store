@@ -1,6 +1,7 @@
 .header__wrapper {
-	background-color: #f2f2f2;
+
 }
+
 .header__logoImg {
 	width: 145px;
 	height: 105px;
@@ -12,12 +13,11 @@
 .header__logoImg:hover {
 	cursor: pointer;
 }
-
 .header__items {
 	list-style: none;
 	position: absolute;
 	top: 30px;
-	right: 0;
+	right: 1%;
 }
 .header__itemsLi {
 	display: inline;
@@ -54,4 +54,14 @@ a.navLinkCart {
 	position: relative;
 	top: 3.5px;
 	margin-left: 5px;
+}
+.header__title {
+	font-family: "Raleway";
+	font-weight: bolder;
+	font-size: 25px;
+	width: 300px;
+	position: absolute;
+	top: 2%;
+	left: 14%;
+	cursor: default;
 }

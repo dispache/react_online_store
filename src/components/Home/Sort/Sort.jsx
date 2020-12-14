@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import classnames from 'classnames';
 
 import './Sort.css';
@@ -9,18 +9,20 @@ import doubleUp from '../../../assets/images/double-up.png';
 import { setSortByActionCreator as setSortBy } from '../../../redux/actions/smartphones';
 
 
-let sortItems = [
-	{ name : "популярности", type : 'popular', order : 'desc' },
-	{ name : "цене", type : 'price', order : 'desc' },
-	{ name : "алфавиту", type : 'brand', order : 'asc' }
-]
 
-const Sort = ( { activeItem } ) => {
+const Sort = React.memo( () => {
 	
 	let sortList = useRef();
 	
+	let { sortBy, sortItems } = useSelector(({smartphonesPage}) => {
+		return {
+			sortBy : smartphonesPage.sortBy,
+			sortItems : smartphonesPage.sortItems
+		}
+	})
+
 	let [ visibleSortPopup, setVisibleSortPopup ] = useState(false);
-	let [ activeSortItem, setActiveSortItem ] = useState(activeItem);
+	let [ activeSortItem, setActiveSortItem ] = useState(sortBy.name);
 	
 	let dispatch = useDispatch();
 
@@ -41,7 +43,6 @@ const Sort = ( { activeItem } ) => {
 	}
 	const setActiveItem = (item) => {
 		setActiveSortItem(item.name);
-		// console.log(item)
 		dispatch(setSortBy(item))
 		setVisibleSortPopup(false);
 	}
@@ -60,7 +61,7 @@ const Sort = ( { activeItem } ) => {
 
 
 				</div>)
-}
+}) 
 
 
 

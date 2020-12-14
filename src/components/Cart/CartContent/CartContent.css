@@ -16,6 +16,26 @@
 	top: 0;
 	left: 40%;
 }
+.backToHome {
+	border: 1px solid grey;
+	border-radius: 35px;
+	min-width: 120px;
+	min-height: 35px;
+	font-family: "Raleway";
+	text-transform: uppercase;
+	text-decoration: none;
+	position: absolute;
+	left: 9%;
+	top: 4.5%;
+	cursor: pointer;
+	background-color: white;
+}
+.backToHome:active {
+	outline: none;
+}
+.backToHome:hover {
+	box-shadow: 0 0 5px grey;
+}
 .headerTitle {
 	position: absolute;
 	left: 48%;
@@ -30,7 +50,7 @@
 	top: 30px;
 	width: 190px;
 	opacity: 0.3;
-	font-family: "Roboto"
+	font-family: "Raleway"
 }
 .deleteBlock:hover {
 	opacity: 1;
@@ -53,10 +73,9 @@
 }
 .cartConfirm {
 	margin: 50px 0;
-	width: 100%;
-	position: relative;
+	position: absolute;
 	top: 60px;
-	left: 35%;
+	left: 32%;
 }
 .totalPrice {
 	text-align: left;
@@ -78,7 +97,14 @@
 	text-decoration: none;
 	margin-left: 50px;
 	cursor: pointer;
+	position: fixed;
+	left: 53%;
+	top: 24.7%;
 }
 .confirmButton:focus {
 	outline: none;
+}
+.confirmButton:hover {
+	background-color: white;
+	color: black;
 }

@@ -30,7 +30,7 @@ const Content = () => {
 
 	useEffect(() => {
 		dispatch(fetchSmartphones(sortBy,activePage, selectedCategories));
-	}, [activePage,sortBy, selectedCategories,dispatch]);
+	}, [activePage,sortBy,selectedCategories,dispatch]);
 
 	let pages = [];
 	

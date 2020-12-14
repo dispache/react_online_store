@@ -5,7 +5,7 @@ import removeIcon from '../../../assets/images/removeIcon.png';
 import './CartProd.css';
 
 
-const CartProd = ({brand,model,image,price,prodIndex, deleteProd}) => {
+const CartProd = React.memo( ({brand,model,image,price,prodIndex, deleteProd}) => {
 
 
 	let deleteObj = { brand,model,image,price,prodIndex };
@@ -25,6 +25,6 @@ const CartProd = ({brand,model,image,price,prodIndex, deleteProd}) => {
 				</div>
 			
 		)
-}
+})
 
 export default CartProd;

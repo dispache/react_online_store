@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 
 import CartProd from './CartProd';
@@ -37,6 +38,8 @@ const CartContent = () => {
 			
 			<div className='headerTitle'>Корзина</div>
 			
+			<NavLink to='/'><button className='backToHome'>Вернуться на главную</button></NavLink>
+
 			<div className='deleteBlock' onClick={deleteAllProd}>
 			
 			<img className='deleteBlock__icon' src={deleteIcon} alt="Delete"></img>
@@ -59,7 +62,6 @@ const CartContent = () => {
 			<button className='confirmButton'>Оформить покупку</button>
 
 		</div>	
-
 	</div>
 }
 

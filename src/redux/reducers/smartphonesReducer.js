@@ -4,13 +4,23 @@ const SET_SIDEBAR_BRANDS = 'setSidebarBrands';
 const SET_ACTIVE_PAGE = 'setActivePage';
 const SET_SELECTED_CATEGORIES = 'setSelectedCategories';
 const SET_TOTAL_PAGES = 'setTotalPages';
+const SET_CHECKED_SIDEBAR_ITEMS = 'setCheckedSidebarItems';
 
 let initialState = {
 	smartphones : [],
 	isLoaded : false,
 	activePage : 1,
 	sortBy : { name : "популярности", type : 'popular', order : 'desc' },
-	sidebarBrands : [],
+	sortItems : [
+		{ name : "популярности", type : 'popular', order : 'desc' },
+		{ name : "цене", type : 'price', order : 'desc' },
+		{ name : "алфавиту", type : 'brand', order : 'asc' }
+	],
+	sidebarItems : [
+		{ title : 'Apple', id : 0, isChecked : false },
+		{ title : 'Samsung', id : 1, isChecked : false },
+		{ title : 'Xiaomi', id : 2, isChecked : false }
+],
 	selectedCategories : [],
 	totalPages : null
 }
@@ -47,6 +57,16 @@ const smartphonesReducer = (state=initialState, action) => {
 			return {
 				...state,
 				activePage : action.page
+			}
+		case SET_CHECKED_SIDEBAR_ITEMS : 
+			let newSidebarItems = state.sidebarItems.map( el => {
+				if ( el.id === action.payload.id ) {
+					el.isChecked = !el.isChecked
+				} return el
+			})
+			return {
+				...state,
+				sidebarItems : newSidebarItems
 			}
 		default :
 			return state;

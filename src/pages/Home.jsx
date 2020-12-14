@@ -7,7 +7,7 @@ const Home = () => {
 		return (
 			<div className='homePage'>
 			
-					<Sort activeItem={'популярности'}/>
+					<Sort />
 		        	<Sidebar />
 		        	<Content />
 

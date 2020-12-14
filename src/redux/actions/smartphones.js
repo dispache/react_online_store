@@ -56,31 +56,30 @@ export const setTotalPagesActionCreator = (payload) => {
 	}
 }
 
+export const setCheckedSidebarItems = (payload) => {
+	return {
+		type : 'setCheckedSidebarItems',
+		payload
+	}
+}
+
 export const fetchSmartphones = (sortBy,activePage,selectedCategories) => (dispatch) => {
-	
+	const auxiliaryFetch = (options) => {
+		axios.get(`http://localhost:3001/smartphones?${options}&_sort=${sortBy.type}
+			&_order=${sortBy.order}&_limit=4&_page=${activePage}`)
+		.then( ( response ) => {
+		dispatch(setTotalPagesActionCreator(response.headers['x-total-count']));
+		dispatch(setSmartphonesActionCreator(response.data));
+		if ( response.data.length === 0 ) dispatch(setActivePageActionCreator(1))
+		})	
+	}
 	if ( selectedCategories.length === 0 || selectedCategories.length === 3 ) {
-	axios.get(`http://localhost:3001/smartphones?_sort=${sortBy.type}&_order=${sortBy.order}&_limit=4&_page=${activePage}`)
-	.then( ( response ) => {
-		dispatch(setTotalPagesActionCreator(response.headers['x-total-count']));
-		dispatch(setSmartphonesActionCreator(response.data));
-		if ( response.data.length === 0 ) dispatch(setActivePageActionCreator(activePage-1))
-	}) }
+		auxiliaryFetch('')
+	}
 	else if ( selectedCategories.length === 1 ) {
-	axios.get(`http://localhost:3001/smartphones?brandId=${selectedCategories[0].id}
-			&_sort=${sortBy.type}&_order=${sortBy.order}&_limit=4&_page=${activePage}`)
-	.then( ( response ) => {
-		dispatch(setTotalPagesActionCreator(response.headers['x-total-count']));
-		dispatch(setSmartphonesActionCreator(response.data));
-		if ( response.data.length === 0 ) dispatch(setActivePageActionCreator(activePage-1))
-	})	
+		auxiliaryFetch(`brandId=${selectedCategories[0].id}`)
 	}
 	else if ( selectedCategories.length === 2 ) {
-	axios.get(`http://localhost:3001/smartphones?brandId=${selectedCategories[0].id}
-		&brandId=${selectedCategories[1].id}&_sort=${sortBy.type}&_order=${sortBy.order}&_limit=4&_page=${activePage}`)
-	.then( ( response ) => {
-		dispatch(setTotalPagesActionCreator(response.headers['x-total-count']));
-		dispatch(setSmartphonesActionCreator(response.data));
-		if ( response.data.length === 0 ) dispatch(setActivePageActionCreator(activePage-1))
-	})	
+		auxiliaryFetch(`brandId=${selectedCategories[0].id}&brandId=${selectedCategories[1].id}`)
 	}
 }
