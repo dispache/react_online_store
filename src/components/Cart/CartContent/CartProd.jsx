@@ -2,7 +2,7 @@ import React from 'react';
 
 import removeIcon from '../../../assets/images/removeIcon.png';
 
-import './CartProd.css';
+import '../../../css/Cart/CartProd.css';
 
 
 const CartProd = React.memo( ({brand,model,image,price,prodIndex, deleteProd}) => {

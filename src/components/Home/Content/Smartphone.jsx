@@ -1,6 +1,6 @@
 import React, { useRef, useState } from 'react';
 
-import './Smartphone.css';
+import '../../../css/Home/Smartphone.css';
 
 
 const Smartphone = React.memo(({ brand,model,price,image, addProd }) => {

@@ -4,9 +4,11 @@ import { useSelector, useDispatch } from 'react-redux';
 
 import CartProd from './CartProd';
 
-import './CartContent.css';
+import '../../../css/Cart/CartContent.css';
+
 import cartIcon from '../../../assets/images/cartIcon.png';
 import deleteIcon from '../../../assets/images/deleteIcon.png';
+import emptyCart from '../../../assets/images/emptyCart.png';
 
 import { deleteProdInCart, deleteAllProdInCart } from '../../../redux/actions/cart';
 
@@ -47,11 +49,14 @@ const CartContent = () => {
 			</div>
 		</div>
 			<div className='cartProducts'>
-				{
+				{	totalPrice ?
 					cartItems.map( (item,index) => {
 						return <CartProd {...item} key={item.brand + item.model + index} 
 						deleteProd={deleteProd} />
 					})
+					: <div className='emptyCartBlock'><img src={emptyCart} alt='Пусто...'></img>
+						<div className='emptyCartBlockTitle'>Хмм... Кажется, корзина пуста. Вы не совершили еще покупок.</div>
+						</div>
 				}
 				
 			</div>

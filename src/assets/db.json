@@ -1,5 +1,10 @@
-{
-	"brands" : [ { "title" : "Apple", "id" : 0 },
+{	
+	"users" : [
+		{ "login" : "dispache", "password" : "zhenya123" },
+	],
+	
+	"brands" : [ 
+		{ "title" : "Apple", "id" : 0 },
 		{ "title" : "Samsung", "id" : 1 },
 		{ "title" : "Xiaomi", "id" : 2 }
 	],

@@ -12,7 +12,7 @@ import Collapse from '@material-ui/core/Collapse';
 import ExpandLess from '@material-ui/icons/ExpandLess';
 import ExpandMore from '@material-ui/icons/ExpandMore';
 
-import './Sidebar.css';
+import '../../../css/Home/Sidebar.css';
 
 const useStyles = makeStyles((theme) => ({
   root: {

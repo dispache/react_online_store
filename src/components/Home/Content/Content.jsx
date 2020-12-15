@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import Smartphone from './Smartphone.jsx';
 
-import './Content.css';
+import '../../../css/Home/Content.css';
 
 import preloader from '../../../assets/images/preloader.gif';
 

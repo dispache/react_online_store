@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import classnames from 'classnames';
 
-import './Sort.css';
+import '../../../css/Home/Sort.css';
 
 import doubleUp from '../../../assets/images/double-up.png';
 
