@@ -1,40 +1,14 @@
 .login__wrapper {
   position: absolute;
   left: 50%;
-  top: 10%;
+  top: 5%;
   transform: translate(-50%);
   background-color: #f2f2f2;
   width: 50%;
   border-radius: 35px;
+  padding-bottom: 20px;
 }
-.login__title {
-	text-align: center;
-	font-weight: bolder;
-	margin-top: 15px;
-}
-input {
-	background-color: inherit;
-	border-radius: 35px;
-	border: 1px solid grey;
-	width: 80%;
-	margin-left: 10%;
-	height: 30px;
-	padding-left: 10px;
-}
-input:focus {
-	outline: none;
-}
-.formText {
-	font-size: 14px;
-	font-weight: bold;
-	text-decoration: underline;
-	margin: 15px 15px;
-}
-.formSubmitBtn {
-	position: relative;
-	left: 40.5%;
-	bottom: -10%;
-	margin : 5% 0;
+.backToHomeFromLogin {
 	border: 1px solid grey;
 	border-radius: 35px;
 	min-width: 120px;
@@ -42,12 +16,14 @@ input:focus {
 	font-family: "Raleway";
 	text-transform: uppercase;
 	text-decoration: none;
+	position: absolute;
+	left: -40%;
 	cursor: pointer;
-	background-color: inherit;
+	background-color: white;
 }
-.formSubmitBtn:focus,active {
+.backToHomeFromLogin:active {
 	outline: none;
 }
-.formSubmitBtn:hover {
-	box-shadow: 0 0 10px grey;
+.backToHomeFromLogin:hover {
+	box-shadow: 0 0 5px grey;
 }

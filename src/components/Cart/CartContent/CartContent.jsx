@@ -31,6 +31,10 @@ const CartContent = () => {
 		dispatch(deleteAllProdInCart());
 	}
 
+	const clickConfirmBtn = () => {
+		alert('Покупка совершена')
+	}
+
 
 	return <div className='cartContent__wrapper'>
 		
@@ -64,7 +68,8 @@ const CartContent = () => {
 			<div className='cartConfirm'>
 			
 			<span className='totalPrice'>Общая сумма : <span className='totalPriceValue'>{totalPrice} грн</span></span>
-			<button className='confirmButton'>Оформить покупку</button>
+			<button className='confirmButton' disabled={ totalPrice === 0 ? true : false}
+			onClick={clickConfirmBtn}>Оформить покупку</button>
 
 		</div>	
 	</div>

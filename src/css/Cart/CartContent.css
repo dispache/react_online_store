@@ -120,3 +120,7 @@
 	bottom: 45%;
 	width: 100%;
 }
+.confirmButton:disabled {
+  cursor: not-allowed;
+  pointer-events: all !important;
+}

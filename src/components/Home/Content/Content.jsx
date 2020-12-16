@@ -15,8 +15,9 @@ const Content = () => {
 
 	let dispatch = useDispatch();
 
-	let { smartphones, sortBy, isLoaded, selectedCategories, activePage, totalPages, cartItems } = useSelector( 
-		({smartphonesPage, cartPage}) => {
+	let { smartphones, sortBy, isLoaded, selectedCategories, activePage, totalPages, cartItems, 
+	isAuth } = useSelector( 
+		({smartphonesPage, cartPage, auth}) => {
 		return {
 			smartphones : smartphonesPage.smartphones,
 			activePage : smartphonesPage.activePage,
@@ -24,9 +25,11 @@ const Content = () => {
 			isLoaded : smartphonesPage.isLoaded,
 			selectedCategories : smartphonesPage.selectedCategories,
 			totalPages : smartphonesPage.totalPages,
-			cartItems : cartPage.cartItems
+			cartItems : cartPage.cartItems,
+			isAuth : auth.isAuth
 		}
 	})
+
 
 	useEffect(() => {
 		dispatch(fetchSmartphones(sortBy,activePage, selectedCategories));
@@ -43,10 +46,14 @@ const Content = () => {
 	}
 
 	const addProdToCart = (obj) => {
+		if ( isAuth ) {
 		alert('Товар был добавлен в корзину');
 		let prodIndex = cartItems.length + 1;
 		obj = {...obj, prodIndex}
 		dispatch(addProdToCartActionCreator(obj))
+		} else {
+			alert('Войдите в свой аккаунт')
+		}
 	}
 
 	return <div className='content'>

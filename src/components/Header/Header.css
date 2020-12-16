@@ -65,3 +65,31 @@ a.navLinkCart {
 	left: 14%;
 	cursor: default;
 }
+.header__itemsLi__btn {
+	border: 1px solid grey;
+	border-radius: 35px;
+	width: 120px;
+	min-height: 35px;
+	text-transform: uppercase;
+	color: white;
+	padding-top: 2px;
+	background-color: #1a75ff;
+	text-decoration: none;	
+}
+.header__itemsLi__btn:hover {
+	background-color: #b3d1ff;
+	transition: background-color 0.25s ease-in-out;
+	cursor: pointer;
+}
+.header__itemsLi__btn:focus,active {
+	outline: none;
+}
+.authInfo {
+	position: absolute;
+	right: 5%;
+	top: 1%;
+}
+.authLogin {
+	text-decoration: underline;
+	font-weight: bolder;
+}
