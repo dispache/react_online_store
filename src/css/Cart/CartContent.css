@@ -1,13 +1,11 @@
 .cartContent__wrapper {
-	position: absolute;
+	position: relative;
 	top: 15%;
 	width: 100%;
-	min-height: 700px;
-    justify-content: center;
-    align-items: center;
 }
 .cartContent__header {
 	width: 100%;
+	height: 160px;
 }
 .cartIcon {
 	width: 100px;
@@ -15,6 +13,11 @@
 	position: absolute;
 	top: 0;
 	left: 40%;
+}
+.toHomeBlock {
+	position: absolute;
+	left: 12%;
+	top: 30px;
 }
 .backToHome {
 	border: 1px solid grey;
@@ -24,9 +27,6 @@
 	font-family: "Raleway";
 	text-transform: uppercase;
 	text-decoration: none;
-	position: absolute;
-	left: 9%;
-	top: 4.5%;
 	cursor: pointer;
 	background-color: white;
 }
@@ -46,7 +46,7 @@
 }
 .deleteBlock {
 	position: absolute;
-	right: 10%;
+	right: 12%;
 	top: 30px;
 	width: 190px;
 	opacity: 0.3;
@@ -66,10 +66,9 @@
 }
 .cartProducts {
 	width: 70%;
-	position: absolute;
-	padding: 15px 0;
-	top: 25%;
-	right: 15%;
+	position: relative;
+	left: 15%;
+	margin-top: 3%;
 }
 .cartConfirm {
 	margin: 50px 0;
@@ -97,9 +96,6 @@
 	text-decoration: none;
 	margin-left: 50px;
 	cursor: pointer;
-	position: fixed;
-	left: 53%;
-	top: 24.7%;
 }
 .confirmButton:focus {
 	outline: none;

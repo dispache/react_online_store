@@ -44,13 +44,22 @@ const CartContent = () => {
 			
 			<div className='headerTitle'>Корзина</div>
 			
-			<NavLink to='/'><button className='backToHome'>Вернуться на главную</button></NavLink>
+			<div className='toHomeBlock'><NavLink to='/'><button className='backToHome'>Вернуться на главную</button></NavLink></div>
 
 			<div className='deleteBlock' onClick={deleteAllProd}>
 			
 			<img className='deleteBlock__icon' src={deleteIcon} alt="Delete"></img>
 				<span className='deleteBlock__title'>Очистить корзину</span>
 			</div>
+
+						<div className='cartConfirm'>
+			
+			<span className='totalPrice'>Общая сумма : <span className='totalPriceValue'>{totalPrice} грн</span></span>
+			<button className='confirmButton' disabled={ totalPrice === 0 ? true : false}
+			onClick={clickConfirmBtn}>Оформить покупку</button>
+
+		</div>	
+		
 		</div>
 			<div className='cartProducts'>
 				{	totalPrice ?
@@ -65,13 +74,7 @@ const CartContent = () => {
 				
 			</div>
 
-			<div className='cartConfirm'>
-			
-			<span className='totalPrice'>Общая сумма : <span className='totalPriceValue'>{totalPrice} грн</span></span>
-			<button className='confirmButton' disabled={ totalPrice === 0 ? true : false}
-			onClick={clickConfirmBtn}>Оформить покупку</button>
 
-		</div>	
 	</div>
 }
 

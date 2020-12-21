@@ -1,5 +1,5 @@
 .header__wrapper {
-
+	position: relative;
 }
 
 .header__logoImg {
@@ -61,7 +61,7 @@ a.navLinkCart {
 	font-size: 25px;
 	width: 300px;
 	position: absolute;
-	top: 2%;
+	top: 17%;
 	left: 14%;
 	cursor: default;
 }
@@ -87,7 +87,7 @@ a.navLinkCart {
 .authInfo {
 	position: absolute;
 	right: 5%;
-	top: 1%;
+	top: 9%;
 }
 .authLogin {
 	text-decoration: underline;
